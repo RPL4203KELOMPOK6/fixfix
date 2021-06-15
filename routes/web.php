@@ -19,3 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('role:admin')->get('/dashboard', 'HomeController@index2')->name('dashboard');
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/admin/createalbum', 'AlbumController@create');
+Route::get('/admin/dataalbum', 'AlbumController@index');
+Route::post('/admin/dataalbum', 'AlbumController@store');
+Route::get('/admin/dataalbum/{id}', 'AlbumController@show');
+Route::get('/admin/dataalbum/{id}/edit', 'AlbumController@edit');
+Route::put('/admin/dataalbum/{id}', 'AlbumController@update');
+Route::delete('/admin/dataalbum/{id}', 'AlbumController@destroy');
+
