@@ -40,12 +40,12 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="/admin">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-1-10">
+                        {{-- <b class="logo-icon p-1-10"> --}}
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/img/logo.png" alt="homepage" class="light-logo" />
+                            <img img src="assets/img/logo.png" alt="">
                            
-                        </b>
+                        {{-- </b> --}}
                         <!--End Logo icon -->
                          <!-- Logo text -->
                         
@@ -206,12 +206,6 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-5">
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Pemasok </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="/admin/createpemasok" class="sidebar-link"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Add  </span></a></li>
-                                <li class="sidebar-item"><a href="/admin/datapemasok" class="sidebar-link"><i class="mdi mdi-folder"></i><span class="hide-menu"> Show Data </span></a></li>
-                            </ul>
-                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-apps"></i><span class="hide-menu">Album </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="/admin/createalbum" class="sidebar-link"><i class="mdi mdi-account-plus"></i><span class="hide-menu"> Add </span></a></li>
@@ -247,7 +241,7 @@
              <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Pemasok</h4>
+                        <h4 class="page-title">Admin</h4>
                     </div>
                 </div>
             </div>

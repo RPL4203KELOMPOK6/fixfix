@@ -17,7 +17,6 @@
                         <th style="text-align: center">Harga</th>
                         <th style="text-align: center">Gambar</th>
                         <th style="text-align: center">Deskripsi</th>
-                        <th style="text-align: center">Pemasok ID</th>
                         
                     </tr>
                     </thead>
@@ -27,7 +26,7 @@
                             <td> {{ $album -> nama }} </td>
                             <td> {{ $album  -> penyanyi }} </td>
                             <td> {{ $album  -> harga }} </td>
-                            <td> {{ $album  -> Gambar }} </td>
+                            <td> <img class="card-img-top" src="/image/{{ $album -> gambar }}" style="width:200px;height:200px;">  </td>
                             <td> {{ $album  -> deskripsi }} </td>
                         </tr>
                     </tbody>

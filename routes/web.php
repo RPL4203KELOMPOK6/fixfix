@@ -31,3 +31,26 @@ Route::get('/admin/dataalbum/{id}/edit', 'AlbumController@edit');
 Route::put('/admin/dataalbum/{id}', 'AlbumController@update');
 Route::delete('/admin/dataalbum/{id}', 'AlbumController@destroy');
 
+Route::get('/profile', function () {
+    return view('pemesanan.profile');
+});
+
+Route::get('/cart', function () {
+    return view('pemesanan.cart');
+});
+
+Route::get('/detail_produk', function () {
+    return view('pemesanan.detail_produk');
+});
+
+Route::get('/pesanan', function () {
+    return view('pemesanan.pesanan');
+});
+
+Route::get('/transaksi', function () {
+    return view('pemesanan.transaksi');
+});
+
+Route::get('/address', function () {
+    return view('pemesanan.address');
+});

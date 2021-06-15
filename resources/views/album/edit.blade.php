@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card-header">
-    <h3 class="card-title">List Album</h3>
+    <h3 class="card-title">Input Album</h3>
 </div>
 <div class="row">
     <div class="col-md-6">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                    @error('bio')
+                    @error('Harga')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     </div>
@@ -57,16 +57,17 @@
                         <div class="col-sm-9">
                             <textarea class="form-control" id="deskripsi" name="deskripsi" value="{{$album->deskripsi}}" placeholder="Deskripsi Album"></textarea>
                         </div>
-                    @error('bio')
+                    @error('deskripsi')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     </div>
-        
-                   
+                </div>
+                <!-- /.card-body -->
+            
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                </div> 
-                </form>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
