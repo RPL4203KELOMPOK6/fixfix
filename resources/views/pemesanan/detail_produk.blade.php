@@ -3,20 +3,48 @@
 @section('title','Adress')
 
 @section('login')
-  <li class="nav-item mx-md-3 mx-0">
-    <a class="nav-link font-weight-bold form-font text-body mt-1 text-center" href="#">Login</a>
-  </li>
-  <li class="nav-item mx-md-3  mx-0">
-    <a class="nav-link font-weight-bold form-font text-body register-button mt-1 text-center" href="#">Daftar</a>
-  </li>
+<li class="nav-item dropdown mx-md-3 mx-0">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+  aria-haspopup="true" aria-expanded="false">
+  <img src="assets/img/account.png" alt="">
+  </a>
+  <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
+  <div class="d-flex shadow-sm align-item-center rounded-small p-2">
+      <img src="assets/img/Ellipse 175.png" class="photo-profile rounded-circle" alt=""> <span class="text-gray ml-3 font-weight-bold"><a href="/profile">{{ Auth::user()->name }}</a></span>
+  </div>
+  <a href="#">
+      <div  class="shadow-sm mt-2 rounded-small p-2">
+      <p class="text-gray font-weight-bold">Your Favorite Shop</p>
+      </div>
+  </a>
+  <a href="#">
+      <div  class="shadow-sm mt-2 rounded-small p-2">
+      <p class="text-gray font-weight-bold">Your Transaction</p>
+      </div>
+  </a>
+  <a href="#">
+      <div  class="shadow-sm mt-2 rounded-small p-2">
+      <p class="text-gray font-weight-bold">Setting</p>
+      </div>
+  </a>
+  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+      <p class="text-gray font-weight-bold text-right mt-4 cursor-pointer">{{ __('Logout') }}<i class="ml-1 fa fa-sign-out-alt"></i></p>
+  </a>
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  @csrf
+  </form>
+  </div>
+</li>
 @endsection
 
 @section('container')
 <section>
     <div class="container">
         <div class="row mt-5">
+          
             <div class="col-md-6">
-                <img src="assets/img/detail.png" class="w-100" alt="">
+                <img src="image/1622900440_examine1.png" class="w-100" alt="">
+                {{-- <img src="{{asset('../image/'. $album->gambar)}}" class="w-100" alt="" > --}}
                 <div id="product-carousel" class="owl-carousel owl-theme mt-4 mx-md-5 mx-auto  w-25">
                   <div class="item"><img src="assets/img/detail2.png" class="w-100" alt=""></div>
                   <div class="item"><img src="assets/img/detail2.png" class="w-100" alt=""></div>
@@ -24,7 +52,8 @@
               </div>
             </div>
             <div class="col-md-6 mt-3 mt-md-0">
-                <h5 class="font-weight-bold">BTS<h5>
+                {{-- <h5 class="font-weight-bold">{{$album->nama}}<h5> --}}
+                  <h5 class="font-weight-bold">BTS<h5>
                 <div>
                     <i class="far fa-star star-icon"></i>
                     <i class="far fa-star star-icon"></i>
@@ -33,10 +62,11 @@
                     <i class="far fa-star star-icon"></i>
                     <small class="text-secondary">( 3 costumer review )</small>
                 </div>
-                <h5 class="font-weight-bold text-red">Rp 500.000<h5>
+                {{-- <h5 class="font-weight-bold text-red">{{$album->harga}}<h5> --}}
+                  <h5 class="font-weight-bold">Rp. 500.000 <h5>
                 <div class="content w-responsive-75 mb-3 border-content pt-4 mt-3">
-                Capture the memories with this reusable film camera that uses 35mm film. Just like it's range of disposable cameras, M35 has fixed focus lens, manual film winding an....
-
+                {{-- <p>{{$album->deskripsi}}</p> --}}
+                album bts be
               </div>
               <a href="#" class="content text-dark"><u> SEE MORE</u></a>
               <div class="mt-3 border-content pt-4  w-responsive-75">
@@ -52,6 +82,7 @@
 
               </div>
             </div>
+          
         </div>
     </div>
 </section>

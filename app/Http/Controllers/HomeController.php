@@ -32,4 +32,9 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    // public function detail_produk(Produck $produck)
+    // {
+    //     return view('pemesanan.detail_produk',compact('produck'));
+    // }
 }

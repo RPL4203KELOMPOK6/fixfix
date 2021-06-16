@@ -106,6 +106,21 @@
         </div> 
         @endif
         @endforeach
+        {{-- @forelse($album->chunk(4) as $album)
+            @foreach($album as $album)
+            <div class="col-md-4">
+
+                <product :album="{{$album}}"
+                         albumlink="{{route('album',$album->id)}}"
+                         albumimagepath='{{asset("image/$album->gambar")}}'
+                >
+                </product>
+
+            </div>
+            @endforeach 
+        @empty
+            <h3>No Album</h3>
+        @endforelse --}}
       </div>
       
     </div>
