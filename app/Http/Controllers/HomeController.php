@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function index2()
     {
-        return view('dashboard');
+        return view('admin');
     }
 
     // public function detail_produk(Produck $produck)

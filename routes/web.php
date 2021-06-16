@@ -20,16 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('role:admin')->get('/dashboard', 'HomeController@index2')->name('dashboard');
 
-Route::get('/admin', function () {
-    return view('admin');
-});
-Route::get('/admin/createalbum', 'AlbumController@create');
-Route::get('/admin/dataalbum', 'AlbumController@index');
-Route::post('/admin/dataalbum', 'AlbumController@store');
-Route::get('/admin/dataalbum/{id}', 'AlbumController@show');
-Route::get('/admin/dataalbum/{id}/edit', 'AlbumController@edit');
-Route::put('/admin/dataalbum/{id}', 'AlbumController@update');
-Route::delete('/admin/dataalbum/{id}', 'AlbumController@destroy');
+
+Route::middleware('role:admin')->get('/admin/createalbum', 'AlbumController@create');
+Route::middleware('role:admin')->get('/admin/dataalbum', 'AlbumController@index');
+Route::middleware('role:admin')->post('/admin/dataalbum', 'AlbumController@store');
+Route::middleware('role:admin')->get('/admin/dataalbum/{id}', 'AlbumController@show');
+Route::middleware('role:admin')->get('/admin/dataalbum/{id}/edit', 'AlbumController@edit');
+Route::middleware('role:admin')->put('/admin/dataalbum/{id}', 'AlbumController@update');
+Route::middleware('role:admin')->delete('/admin/dataalbum/{id}', 'AlbumController@destroy');
 
 Route::get('/profile', function () {
     return view('pemesanan.profile');
@@ -54,3 +52,5 @@ Route::get('/transaksi', function () {
 Route::get('/address', function () {
     return view('pemesanan.address');
 });
+
+Route::middleware('role:admin')->get('/listuser', 'AdminController@show')->name('listuser');
