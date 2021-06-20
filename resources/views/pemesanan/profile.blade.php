@@ -66,21 +66,39 @@
                         <div class="data-header py-3 px-2 ">
                             <h5 class="font-weight-bold ml-3">Data Profil</h5>
                         </div>
-                        <dl class="row content data mt-3">
-                            <dd class="col-md-3"><span class="ml-4">Nama</span></dd>
-                            <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->name }}</span></dd>
-                            <dd class="col-md-3"><span class="ml-4">Email</span></dd>
-                            <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->email }}</span></dd>
-                            <dd class="col-md-3"><span class="ml-4">No Hp</span></dd>
-                            <dd class="col-md-9"><span class="ml-4 ml-md-0">:</span></dd>
-                            <dd class="col-md-3"><span class="ml-4">Tanggal Lahir</span></dd>
-                            <dd class="col-md-9"><span class="ml-4 ml-md-0">:</span></dd>
-                        </dl>
-                        <button type="button" class="btn primary-bg text-white  d-block ml-auto  mr-4  font-weight-bold"
-                            data-toggle="modal" data-target="#modalprofil"
-                        >Ubah Profil</button>
+                        <form role="form" action="/profile" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            {{-- @method('PUT') --}}
+                            <div class="form-group row">
+                                <label for="name">Nama</label>
+                                <input type="text" name="name" class="form-control" value="{{$user->name}}">
+                            </div>
+                            <div class="form-group row">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" class="form-control" value="{{$user->email}}">
+                            </div>
+                            <div class="form-group row">
+                                <label for="phone">Nomor Telfon</label>
+                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}">
+                            </div>
+                            <div class="form-group row">
+                                <label for="alamat">Alamat</label>
+                                <input type="text" name="alamat" class="form-control" value="{{$user->alamat}}">
+                            </div>
+                            {{-- <dl class="row content data mt-3">
+                                <dd class="col-md-3"><span class="ml-4">Nama</span></dd>
+                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->name }}</span></dd>
+                                <dd class="col-md-3"><span class="ml-4">Email</span></dd>
+                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->email }}</span></dd>
+                                <dd class="col-md-3"><span class="ml-4">No Hp</span></dd>
+                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->phone }}</span></dd>
+                            </dl>  --}}
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
 
-                        <div class="modal fade" id="modalprofil" role="dialog" arialabelledby="modalLabel" aria-hidden="true"> 
+                        {{-- <div class="modal fade" id="modalprofil" role="dialog" arialabelledby="modalLabel" aria-hidden="true"> 
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -97,15 +115,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="text" name="" class="form-control">
+                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->email }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>No Hp</label>
-                                                <input type="text" name="" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Tanggal Lahir</label>
-                                                <input type="text" name="" class="form-control">
+                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->phone }}">
                                             </div>
                                         </form>
                                     </div>
@@ -172,7 +186,7 @@
                     </div>
                     <a href="/address">
                         <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block mx-auto mx-md-0"> Tambah Alamat Baru </button>
-                    </a>
+                    </a> --}}
 
                 </div>
             </div>

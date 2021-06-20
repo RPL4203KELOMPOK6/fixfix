@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Album;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -31,6 +33,30 @@ class HomeController extends Controller
     public function index2()
     {
         return view('admin');
+    }
+    
+    public function profile()
+    {
+        return view('pemesanan.profile')->with('user', auth()->user());
+    }
+
+    public function update(Request $request)
+    {
+        $user = User::find(Auth::user()->id)->update([
+            "name" => $request["name"],
+            "email" => $request["email"],
+            "phone" => $request["phone"],
+            "alamat" => $request["alamat"]
+        ]);       
+        // $user = auth()->user();
+        
+        // $user->update([
+        //     "name" => $request["name"],
+        //     "email" => $request["email"],
+        //     "phone" => $request["phone"]
+        // ]);       
+    
+        return redirect('/profile')->with('success', 'Data sukses diupdate');
     }
 
     // public function detail_produk(Produck $produck)

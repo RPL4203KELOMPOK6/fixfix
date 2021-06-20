@@ -32,9 +32,12 @@ Route::middleware('role:admin')->get('/admin/dataalbum/{id}/edit', 'AlbumControl
 Route::middleware('role:admin')->put('/admin/dataalbum/{id}', 'AlbumController@update');
 Route::middleware('role:admin')->delete('/admin/dataalbum/{id}', 'AlbumController@destroy');
 
-Route::get('/profile', function () {
-    return view('pemesanan.profile');
-});
+
+Route::get('/profile', 'HomeController@profile');
+Route::post('/profile', 'HomeController@update');
+// Route::get('/profile', function () {
+//     return view('pemesanan.profile');
+// });
 
 Route::get('/cart', function () {
     return view('pemesanan.cart');
