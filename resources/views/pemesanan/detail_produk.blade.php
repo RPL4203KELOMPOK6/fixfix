@@ -10,7 +10,7 @@
   </a>
   <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
   <div class="d-flex shadow-sm align-item-center rounded-small p-2">
-      <img src="assets/img/Ellipse 175.png" class="photo-profile rounded-circle" alt=""> <span class="text-gray ml-3 font-weight-bold"><a href="/profile">{{ Auth::user()->name }}</a></span>
+      <img src="assets/img/account.png" class="photo-profile rounded-circle" alt=""> <span class="text-gray ml-3 font-weight-bold"><a href="/profile">{{ Auth::user()->name }}</a></span>
   </div>
   <a href="#">
       <div  class="shadow-sm mt-2 rounded-small p-2">

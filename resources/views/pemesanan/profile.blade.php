@@ -10,7 +10,7 @@
     </a>
     <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
       <div class="d-flex shadow-sm align-item-center rounded-small p-2">
-        <img src="assets/img/Ellipse 175.png" class="photo-profile rounded-circle" alt=""> <span class="text-gray ml-3 font-weight-bold"> John Doe</span>
+        <img src="assets/img/account.png" class="photo-profile rounded-circle" alt=""> <span class="text-gray ml-3 font-weight-bold"> John Doe</span>
       </div>
       <a href="#">
         <div  class="shadow-sm mt-2 rounded-small p-2">
@@ -65,129 +65,31 @@
                     <div class="profile-data bg-white pb-3">
                         <div class="data-header py-3 px-2 ">
                             <h5 class="font-weight-bold ml-3">Data Profil</h5>
-                        </div>
-                        <form role="form" action="/profile" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            {{-- @method('PUT') --}}
-                            <div class="form-group row">
-                                <label for="name">Nama</label>
-                                <input type="text" name="name" class="form-control" value="{{$user->name}}">
-                            </div>
-                            <div class="form-group row">
-                                <label for="email">Email</label>
-                                <input type="text" name="email" class="form-control" value="{{$user->email}}">
-                            </div>
-                            <div class="form-group row">
-                                <label for="phone">Nomor Telfon</label>
-                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}">
-                            </div>
-                            <div class="form-group row">
-                                <label for="alamat">Alamat</label>
-                                <input type="text" name="alamat" class="form-control" value="{{$user->alamat}}">
-                            </div>
-                            {{-- <dl class="row content data mt-3">
-                                <dd class="col-md-3"><span class="ml-4">Nama</span></dd>
-                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->name }}</span></dd>
-                                <dd class="col-md-3"><span class="ml-4">Email</span></dd>
-                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->email }}</span></dd>
-                                <dd class="col-md-3"><span class="ml-4">No Hp</span></dd>
-                                <dd class="col-md-9"><span class="ml-4 ml-md-0">: {{ Auth::user()->phone }}</span></dd>
-                            </dl>  --}}
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-
-                        {{-- <div class="modal fade" id="modalprofil" role="dialog" arialabelledby="modalLabel" aria-hidden="true"> 
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Edit Profil Anda</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label>Nama</label>
-                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->name }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->email }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>No Hp</label>
-                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->phone }}">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="reset" class="btn btn-danger">Reset</button>
-                                    </div>
+                        </div>               
+                        <dl class="row content data mt-3 px-5">
+                            <form role="form" action="/profile" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                {{-- @method('PUT') --}}
+                                <div class="form-group row">
+                                    <label for="name">Nama</label>
+                                    <input type="text" name="name" class="form-control" value="{{$user->name}}">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-data bg-white pb-3 mt-5">
-                        <div class="data-header py-3 px-2 ">
-                            <h5 class="font-weight-bold ml-3">Alamat Pengiriman</h5>
-                        </div>
-                        <p class="content font-weight-bold ml-4 mt-2">Alamat 1</p>
-                        <div class="row content data mt-3">
-                           <div class="col-md-6">
-                                <small class="text-secondary ml-4">Nama Penerima</small>
-                                <p class="content data ml-4">Bidadari</p>
-                           </div>
-                           <div class="col-md-6">
-                            <small class="text-secondary ml-4">No Hp</small>
-                            <p class="content data ml-4">085262947577</p>
-                        </div>
-                        </div>
-                        <button type="button" class="btn primary-bg text-white  d-block ml-auto  mr-4  font-weight-bold"
-                            data-toggle="modal" data-target="#modalAlamat"
-                        >Ubah</button>
-
-                        <div class="modal fade" id="modalAlamat" role="dialog" arialabelledby="modalLabel" aria-hidden="true"> 
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Edit Alamat Anda</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label>Nama Penerima</label>
-                                                <input type="text" name="" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>No HP</label>
-                                                <input type="text" name="" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Alamat Anda</label>
-                                                <textarea class="form-control" rows="5"></textarea>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="reset" class="btn btn-danger">Reset</button>
-                                    </div>
+                                <div class="form-group row">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" class="form-control" value="{{$user->email}}">
                                 </div>
-                            </div>
-                        </div>
-
+                                <div class="form-group row">
+                                    <label for="phone">Nomor Telfon</label>
+                                    <input type="text" name="phone" class="form-control" value="{{$user->phone}}">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="alamat">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" value="{{$user->alamat}}">
+                                </div>
+                            </form>
+                        </dl>
+                        <button type="button" class="btn primary-bg text-white  d-block ml-auto  mr-4  font-weight-bold">Submit</button>
                     </div>
-                    <a href="/address">
-                        <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block mx-auto mx-md-0"> Tambah Alamat Baru </button>
-                    </a> --}}
-
                 </div>
             </div>
         </div>
