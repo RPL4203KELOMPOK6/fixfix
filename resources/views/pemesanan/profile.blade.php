@@ -78,7 +78,7 @@
                         </dl>
                         <button type="button" class="btn primary-bg text-white  d-block ml-auto  mr-4  font-weight-bold"
                             data-toggle="modal" data-target="#modalprofil"
-                        >UbahProfil</button>
+                        >Ubah Profil</button>
 
                         <div class="modal fade" id="modalprofil" role="dialog" arialabelledby="modalLabel" aria-hidden="true"> 
                             <div class="modal-dialog" role="document">
@@ -93,7 +93,7 @@
                                         <form>
                                             <div class="form-group">
                                                 <label>Nama</label>
-                                                <input type="text" name="" class="form-control">
+                                                <input type="text" name="" class="form-control" placeholder="{{ Auth::user()->name }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>

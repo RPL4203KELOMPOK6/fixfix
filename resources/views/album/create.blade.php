@@ -5,7 +5,7 @@
     <h3 class="card-title">Input Album</h3>
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="card">
             <form role="form" action="/admin/dataalbum" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}

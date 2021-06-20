@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,4 +56,4 @@ Route::get('/address', function () {
     return view('pemesanan.address');
 });
 
-Route::middleware('role:admin')->get('/listuser', 'AdminController@show')->name('listuser');
+Route::middleware('role:admin')->get('/admin/listuser', 'AdminController@show')->name('listuser');
