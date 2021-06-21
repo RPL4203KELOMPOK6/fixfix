@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('title','Adress')
+{{-- @section('title','Adress') --}}
 
 @section('login')
   <li class="nav-item mx-md-3 mx-0">

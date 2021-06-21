@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('title','Cart')
+@section('title','Alboem | Keranjang')
 
 @section('login')
   <li class="nav-item dropdown mx-md-3 mx-0">
@@ -39,7 +39,7 @@
                 <div class="col-md-8 p-4">
                     <div class="wishlist bg-white ">
                         <div class="data-header py-3 px-2 ">
-                            <h5 class="font-weight-bold ml-3 mt-2">Cart</h5>
+                            <h5 class="font-weight-bold ml-3 mt-2">Keranjang</h5>
                         </div>
                         <div class="option d-flex justify-content-between pl-5 pr-3 mt-3">
                             <div>

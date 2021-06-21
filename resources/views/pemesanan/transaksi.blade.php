@@ -1,6 +1,6 @@
 @extends('layouts/main');
 
-@section('title','Adress')
+@section('title','Alboem | Transaksi')
 
 @section('login')
   <li class="nav-item dropdown mx-md-3 mx-0">
