@@ -69,7 +69,26 @@
                             @enderror
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <div class="input-container">
+                            <input placeholder="Phone" type="pgone" class="form-control  py-4 @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                            @error('phone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-container">
+                            <input placeholder="Address" type="alamat" class="form-control  py-4 @error('alamat') is-invalid @enderror" id="alamat" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat">
+                            @error('alamat')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="input-container">
                             <img class="key-icon" src="assets/img/pass-icon.png" alt="" >
