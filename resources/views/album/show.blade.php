@@ -3,7 +3,7 @@
 {{-- @section('title','Alboem | Home') --}}
 
 @section('content')
-<div class="content">
+{{-- <div class="content">
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-lg-12">
@@ -42,5 +42,25 @@
     </div>
 </div>
 </div><!-- .animated -->
+</div> --}}
+
+<div class="col-md-12">
+    <div class="feed-box text-center">
+        <section class="card">
+            <div class="card-body">
+                <div class="corner-ribon blue-ribon">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <a href="#">
+                    <img class="card-img-top" src="/image/{{ $album -> gambar }}" style="width:200px;height:200px;">                </a>
+                <h2>{{ $album -> nama }}</h2>
+                <h5>Album dari "{{ $album  -> penyanyi }}"</h5>
+                <p></p>
+                <p>
+                    {{ $album  -> deskripsi }}
+                </p>
+            </div>
+        </section>
+    </div>
 </div>
 @endsection
