@@ -11,9 +11,9 @@
     <!-- Favicon icon -->
     <title>Admin | Dashboard</title>
     <!-- Custom CSS -->
-    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <link href="{{asset('assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,7 +43,7 @@
                         {{-- <b class="logo-icon p-1-10"> --}}
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img img src="../../assets/img/logo.png" alt="">
+                            <img img src="{{asset('assets/img/logo.png')}}" alt="">
                            
                         {{-- </b> --}}
                         <!--End Logo icon -->

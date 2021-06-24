@@ -60,3 +60,12 @@ Route::get('/address', function () {
 });
 
 Route::middleware('role:admin')->get('/admin/listuser', 'AdminController@show')->name('listuser');
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/home2', function () {
+    return view('home2');
+});
+

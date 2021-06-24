@@ -1,75 +1,70 @@
-@extends('dashboard')
+@extends('index')
+
+{{-- @section('title','Alboem | Home') --}}
 
 @section('content')
-<div class="card-header">
-    <h3 class="card-title">Input Album</h3>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="card">
+<div class="col-lg">
+    <div class="card">
+        <div class="card-header">Input Album</div>
+        <div class="card-body card-block">
             <form role="form" action="/admin/dataalbum/{{$album->id}}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 @method('PUT')
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="nama" class="col-sm-2 text-right control-label col-form-label">Nama</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{$album->nama}}" placeholder="Nama Album">
-                        </div>
-                    @error('nama')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Nama Album</div>
+                        <input type="text" id="nama" name="nama" class="form-control" value="{{$album->nama}}">
+                        <div class="input-group-addon"><i class="fa fa-book"></i></div>
                     </div>
-                    <div class="form-group row">
-                        <label for="penyanyi" class="col-sm-2 text-right control-label col-form-label">Penyanyi</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="penyanyi" name="penyanyi" value="{{$album->penyanyi}}" placeholder="Nama Penyanyi">
-                        </div>
-                    @error('email')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                {{-- @error('nama')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror --}}
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Penyanyi</div>
+                        <input type="text" id="penyanyi" name="penyanyi" class="form-control" value="{{$album->penyanyi}}">
+                        <div class="input-group-addon"><i class="fa fa-users"></i></div>
                     </div>
-                    <div class="form-group row">
-                        <label for="harga" class="col-sm-2 text-right control-label col-form-label">Harga</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="harga" name="harga" value="{{$album->harga}}" placeholder="..."  aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                <span class="input-group-text" id="basic-addon2">Rp</span>
-                                </div>
-                            </div>
-                        </div>
-                    @error('Harga')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                {{-- @error('penyanyi')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror --}}
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Harga</div>
+                        <input type="text" id="harga" name="harga" class="form-control" value="{{$album->harga}}">
+                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
                     </div>
-                    <div class="form-group row">
-                        <label for="gambar" class="col-sm-2 text-right control-label col-form-label">Gambar</label>
-                        <div class="col-sm-9">
-                            <input type="file" name="gambar">
-                        </div>
-                    @error('bio')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                {{-- @error('harga')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror --}}
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-2"><label for="gambar" class="form-control-label">Gambar</label></div>
+                    <div class="col-sm-10">
+                        <input type="file" name="gambar">
                     </div>
-                    <div class="form-group row">
-                        <label for="deskripsi" class="col-sm-2 text-right control-label col-form-label">Deskripsi</label>
-                        <div class="col-sm-9">
-                            <textarea class="form-control" id="deskripsi" name="deskripsi" value="{{$album->deskripsi}}" placeholder="Deskripsi Album"></textarea>
-                        </div>
-                    @error('deskripsi')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                @error('bio')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                </div>
+                <div class="form-group row">
+                    <div class="col col-md-2"><label for="deskripsi" class=" form-control-label">Deskripsi</label></div>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="deskripsi" name="deskripsi" value="{{$album->deskripsi}}"></textarea>
                     </div>
+                @error('deskripsi')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
                 <!-- /.card-body -->
             
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-actions form-group">
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
 @endsection       

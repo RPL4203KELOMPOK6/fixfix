@@ -32,7 +32,8 @@ class HomeController extends Controller
 
     public function index2()
     {
-        return view('admin');
+        $album = Album::all();
+        return view('admin')->with('album',$album);
     }
     
     public function profile()
