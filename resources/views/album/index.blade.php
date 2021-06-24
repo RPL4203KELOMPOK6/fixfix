@@ -21,7 +21,7 @@
                                     <th>Harga</th>
                                     <th>Gambar</th>
                                     <th>Deskripsi</th>
-                                    <th>Action</th>
+                                    <th style="text-align:left;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,7 +31,7 @@
                                     <td> {{ $album -> nama }} </td>
                                     <td> {{ $album -> penyanyi }} </td>
                                     <td> {{ $album -> harga }} </td>
-                                    <td> <img class="card-img-top" src="/image/{{ $album -> gambar }}" style="width:200px;height:200px;"> </td>
+                                    <td> <img class="card-img-top" src="/image/{{ $album -> gambar }}"> </td>
                                     <td> {{ $album -> deskripsi }} </td>
                                     <td style="display:flex;">
                                         <a href="/admin/dataalbum/{{$album->id}}" class="btn btn-info btn-sm">show</a>

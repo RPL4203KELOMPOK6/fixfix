@@ -12,8 +12,5 @@ class AdminController extends Controller
     {
         $user = User::all();
         return view('user.show', compact('user'))->with('user',$user);
-        // if ($user->hasRole('user')){
-
-        // }
     }
 }
