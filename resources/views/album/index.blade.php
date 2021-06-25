@@ -3,6 +3,12 @@
 {{-- @section('title','Alboem | Home') --}}
 
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+    
+@endif
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">

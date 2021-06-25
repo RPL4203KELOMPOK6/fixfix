@@ -6,7 +6,7 @@
 <li class="nav-item dropdown mx-md-3 mx-0">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
   aria-haspopup="true" aria-expanded="false">
-  <img src="assets/img/account.png" alt="">
+  <img src="{{asset('assets/img/account.png')}}" alt="">
   </a>
   <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
   <div class="d-flex shadow-sm align-item-center rounded-small p-2">
@@ -31,7 +31,7 @@
       <p class="text-gray font-weight-bold text-right mt-4 cursor-pointer">{{ __('Logout') }}<i class="ml-1 fa fa-sign-out-alt"></i></p>
   </a>
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  @csrf
+       @csrf
   </form>
   </div>
 </li>
@@ -45,15 +45,13 @@
             <div class="col-md-6">
                 <img src="image/1622900440_examine1.png" class="w-100" alt="">
                 {{-- <img src="{{asset('../image/'. $album->gambar)}}" class="w-100" alt="" > --}}
-                <div id="product-carousel" class="owl-carousel owl-theme mt-4 mx-md-5 mx-auto  w-25">
-                  <div class="item"><img src="assets/img/detail2.png" class="w-100" alt=""></div>
-                  <div class="item"><img src="assets/img/detail2.png" class="w-100" alt=""></div>
-                  <div class="item"><img src="assets/img/detail2.png" class="w-100" alt=""></div>
+                <div id="product-carousel" class="mt-4 mx-md-5 mx-auto  w-25">
+                  <div class="item"><img src="/image/{{$data->gambar}}" class="w-100" alt=""></div>
               </div>
             </div>
             <div class="col-md-6 mt-3 mt-md-0">
                 {{-- <h5 class="font-weight-bold">{{$album->nama}}<h5> --}}
-                  <h5 class="font-weight-bold">BTS<h5>
+                  <h5 class="font-weight-bold">{{$data->nama}}<h5>
                 <div>
                     <i class="far fa-star star-icon"></i>
                     <i class="far fa-star star-icon"></i>
@@ -63,10 +61,10 @@
                     <small class="text-secondary">( 3 costumer review )</small>
                 </div>
                 {{-- <h5 class="font-weight-bold text-red">{{$album->harga}}<h5> --}}
-                  <h5 class="font-weight-bold">Rp. 500.000 <h5>
+                  <h5 class="font-weight-bold">Rp. {{$data -> harga}} <h5>
                 <div class="content w-responsive-75 mb-3 border-content pt-4 mt-3">
-                {{-- <p>{{$album->deskripsi}}</p> --}}
-                album bts be
+                <p>{{$data->penyanyi}}</p>
+                
               </div>
               <a href="#" class="content text-dark"><u> SEE MORE</u></a>
               <div class="mt-3 border-content pt-4  w-responsive-75">
@@ -97,7 +95,8 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active content w-responsive-75 py-3 border-content w-100" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        Meet the M35 - it's Kodak's all-new beginner friendly 35mm point and shoot film camera!! <br>
+        <p>{{$data -> deskripsi}}</p>
+        {{-- Meet the M35 - it's Kodak's all-new beginner friendly 35mm point and shoot film camera!! <br>
         With its eye-catching modern retro design, the M35 is Kodak's answer to the growing analogue photography revival!
         <br><br><br>
         They've taken it back to basics & created a super simple to use compact with manual film loading /wind /rewind & a flash! It's suitable for complete beginners & long term film enthusiasts of ALL levels 🙌. You'll simply load your batteries & film, point...& shoot! 📸
@@ -110,7 +109,7 @@
           <li>Shutter: 1/120secs</li>
           <li>Flash</li>
           <li>Manual wind/rewind</li>
-        </ul>
+        </ul> --}}
       </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
     </div>

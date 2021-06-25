@@ -35,6 +35,12 @@
 @endsection
 
 @section('container')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+    
+@endif
 <section>
     <div class="container">
         <div class="row">

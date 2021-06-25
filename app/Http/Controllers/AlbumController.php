@@ -45,7 +45,7 @@ class AlbumController extends Controller
             'deskripsi' => $request->deskripsi
         ]);
         
-        return redirect('/admin/dataalbum');
+        return redirect('/admin/dataalbum')->with('success', 'Data sukses ditambahkan');
     }
 
     public function index()
@@ -90,4 +90,15 @@ class AlbumController extends Controller
         return redirect('/admin/dataalbum')->with('success', 'Data sukses dihapus');
     }
 
+    public function welcome()
+    {
+        $album = Album::all();
+        return view('welcome')->with('album',$album);
+    }
+
+    public function detail($id)
+    {
+        $data = Album::find($id);
+        return view('pemesanan.detail', compact('data'));
+    }
 }

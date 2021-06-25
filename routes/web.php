@@ -14,12 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/', 'AlbumController@welcome');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('role:admin')->get('/dashboard', 'HomeController@index2')->name('dashboard');
 
@@ -34,6 +32,8 @@ Route::middleware('role:admin')->delete('/admin/dataalbum/{id}', 'AlbumControlle
 
 Route::get('/profile', 'HomeController@profile');
 Route::post('/profile', 'HomeController@update');
+Route::get('/detail/{id}', 'AlbumController@detail');
+// Route::post('/detail/{id}', 'AlbumController@cart');
 // Route::get('/profile', function () {
 //     return view('pemesanan.profile');
 // });

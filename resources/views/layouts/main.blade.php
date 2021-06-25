@@ -7,31 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <!-- IMPORT JQUERY -->
-  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="{{asset('assets/js/jquery-3.4.1.min.js')}}"></script>
   <!-- IMPORT POPPER FOR DROPDOWN NAVBAR -->
-  <script src="assets/js/popper.min.js"></script>
+  <script src="{{asset('assets/js/popper.min.js')}}"></script>
   <!-- IMPORT POPPER FOR BOOTSTRAP JS NAVBAR -->
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
 
   <!-- IMPORT BOOTSTRAP -->
-  <link rel='stylesheet' type='text/css' media='screen' href="assets/style/bootstrap.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="{{asset('assets/style/bootstrap.css')}}">
   <!-- IMPORT OWL CAROUSEL -->
-  <link rel="stylesheet" href="assets/style/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/style/owl.theme.default.min.css">
-  <link rel='stylesheet' type='text/css' media='screen' href="assets/style/animate.css">
-  <script src="assets/js/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="{{asset('assets/style/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/style/owl.theme.default.min.css')}}">
+  <link rel='stylesheet' type='text/css' media='screen' href="{{asset('assets/style/animate.css')}}">
+  <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 
   <!-- IMPORT FONT AWESOME LIBRARY ICON -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   <!-- IMPORT MANUAL STYLE -->
-  <link rel='stylesheet' type='text/css' media='screen' href="assets/style/style.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="{{asset('assets/style/style.css')}}">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light container ">
-    <a class="navbar-brand" href="/home"><img src="assets/img/logo.png" alt=""></a>
+    <a class="navbar-brand" href="/home"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,13 +48,13 @@
       </form>
       <ul class="navbar-nav">
         <li class="nav-item active mx-md-3 mx-0">
-            <a class="nav-link d-flex" href="/cart"><img src="assets/img/Group.png" alt=""><span class="d-block text-body mt-1 ml-2 font-weight-bold d-md-none">Cart</span></a>
+            <a class="nav-link d-flex" href="/cart"><img src="{{asset('assets/img/Group.png')}}" alt=""><span class="d-block text-body mt-1 ml-2 font-weight-bold d-md-none">Cart</span></a>
         </li>
         <li class="nav-item mx-md-3 mx-0">
-            <a class="nav-link d-flex" href="#"><img src="assets/img/favorite-24px 1.png" alt=""><span class="d-block  text-body mt-1 ml-2 font-weight-bold d-md-none">Favorite</span></a>
+            <a class="nav-link d-flex" href="#"><img src="{{asset('assets/img/favorite-24px 1.png')}}" alt=""><span class="d-block  text-body mt-1 ml-2 font-weight-bold d-md-none">Favorite</span></a>
         </li>
         <li class="nav-item mx-md-3 mx-0">
-            <a class="nav-link d-flex" href="#"><img src="assets/img/clarity_notification-solid-badged.png" alt=""><span class="d-block  text-body mt-1 ml-2 font-weight-bold d-md-none">Notification</span></a>
+            <a class="nav-link d-flex" href="#"><img src="{{asset('assets/img/clarity_notification-solid-badged.png')}}" alt=""><span class="d-block  text-body mt-1 ml-2 font-weight-bold d-md-none">Notification</span></a>
         </li>
         @yield('login')
       </ul>
@@ -64,7 +64,7 @@
 
   <ul class="nav justify-content-center primary-bg">
     <li class="nav-item mx-md-4">
-      <a class="nav-link  text-white font-weight-bold" href="/home">Beranda</a>
+      <a class="nav-link  text-white font-weight-bold" href="{{route('home')}}">Beranda</a>
     </li>
     <li class="nav-item mx-md-4">
       <a class="nav-link  text-white font-weight-bold dropdown-toggle "  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" href="#">Kategori</a>
@@ -94,9 +94,9 @@
         </div>
         <div class="mr-5 mt-3 mt-md-0">
           <h5 class="font-weight-bold ">Find Us</h5>
-          <a href="#"> <img src="assets/img/facebook-24px 1.png" alt=""></a>
-          <a href="#" class="ml-2"> <img src="assets/img/youtube 1.png" alt=""></a>
-          <a href="#" class="ml-2"> <img src="assets/img/Frame.png" alt=""></a>
+          <a href="#"> <img src="{{asset('assets/img/facebook-24px 1.png')}}" alt=""></a>
+          <a href="#" class="ml-2"> <img src="{{asset('assets/img/youtube 1.png')}}" alt=""></a>
+          <a href="#" class="ml-2"> <img src="{{asset('assets/img/Frame.png')}}" alt=""></a>
 
         </div>
       </div>
@@ -118,6 +118,6 @@
       <p class="text-center py-1 font-weight-light content"><i class="far fa-copyright mr-1"></i> 2020. Powered by Alboem</p>
     </div>
   </section>
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 </html>
