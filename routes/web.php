@@ -42,9 +42,6 @@ Route::get('/cart', function () {
     return view('pemesanan.cart');
 });
 
-Route::get('/detail_produk', function () {
-    return view('pemesanan.detail_produk');
-});
 
 Route::get('/pesanan', function () {
     return view('pemesanan.pesanan');

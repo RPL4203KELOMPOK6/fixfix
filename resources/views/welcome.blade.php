@@ -54,7 +54,7 @@
         @foreach ($album as $data)
         <div class="col-md-4">
             <img src="/image/{{ $data -> gambar }}" class="w-100" style="width: 50px" alt="">
-            <a href="/detail/{{$data->id}}" class="font-weight-bold mt-4 ml-4">{{$data -> name}}</h5>
+            <a href="/detail/{{$data->id}}" class="font-weight-bold mt-4 ml-4">{{$data -> nama}}</h5>
             <p class="text-secondary  ml-4">{{$data -> penyanyi}}</p>
             <p>{{$data -> deskripsi}}</p>
         </div>
