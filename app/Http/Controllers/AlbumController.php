@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\Auth;
 use App\Album;
+use App\Cart;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class AlbumController extends Controller
 {
@@ -100,5 +103,47 @@ class AlbumController extends Controller
     {
         $data = Album::find($id);
         return view('pemesanan.detail', compact('data'));
+    }
+
+    public function addcart(Request $req, $id)
+    {
+            $data = Album::find($id);
+            $cart = new Cart;
+            $cart->user_id = Auth::user()->getAuthIdentifier();
+            $cart->album_id = $data->id;
+            $cart->qty = $req->qty;
+            $cart -> save();
+            return redirect('/detail/'.$id)->with('success', 'Added to cart');
+        
+    }
+
+    public function cart(Request $req)
+    {
+            $userID = Auth::user()->getAuthIdentifier();
+            $data = DB::table('cart_tables')
+            ->join('album', 'cart_tables.album_id','=','album.id')
+            ->where('cart_tables.user_id',$userID)
+            ->select('album.*','cart_tables.qty')
+            ->get();
+
+            // $totalfix = $req->total;
+
+            return view('pemesanan.cart',compact('data'));
+        
+    }
+
+    public function transaksi(Request $req)
+    {
+            $userID = Auth::user()->getAuthIdentifier();
+            $data = DB::table('cart_tables')
+            ->join('album', 'cart_tables.album_id','=','album.id')
+            ->where('cart_tables.user_id',$userID)
+            ->select('album.*','cart_tables.qty')
+            ->get();
+            
+            // $totalfix = $req->total;
+
+            return view('pemesanan.transaksi',compact('data'));
+        
     }
 }

@@ -50,38 +50,42 @@
                                 Hapus 
                             </p>
                         </div>
-                        <div class="wishlist-item top mt-3 d-flex position-relative pl-0 pl-md-5 flex-column flex-md-row py-4">
-                            <input type="checkbox" checked class="rounded cart-check">
-                            <!-- GAMBAR -->
-                            <img src="assets/img/detail2.png" class="wishlist-img d-block mx-auto mx-md-0" alt="">
-                            <div class="ml-0 ml-md-3 text-center text-md-left mt-3 mt-md-0">
-                                <!-- JUDUL PRODUK -->
-                                <p class="content"><span class="font-weight-bold">EXO</span> Vol.3 EX’ACT Album </p>
-                                <!-- HARGA  -->
-                                <h6 class="text-red font-weight-bold mt-4">Rp. 500.000</h6>
-                                <!-- STOK -->
-                                <p class="content mt-4">Stok : 56</p>
-                            </div>
-                            <div class="ml-0 ml-md-auto mr-0  mr-md-4 mx-auto">
+                        @foreach ($data as $item)
+                            <div class="wishlist-item top mt-3 d-flex position-relative pl-0 pl-md-5 flex-column flex-md-row py-4">
+                                <input type="checkbox" checked class="rounded cart-check">
+                                <!-- GAMBAR -->
+                                <img src="{{$item->gambar}}" class="wishlist-img d-block mx-auto mx-md-0" alt="">
+                                <div class="ml-0 ml-md-3 text-center text-md-left mt-3 mt-md-0">
+                                    <!-- JUDUL PRODUK -->
+                                    <p class="content"><span class="font-weight-bold">{{$item->penyanyi}}</span>{{$item->nama}}</p>
+                                    <!-- HARGA  -->
+                                    <input type="hidden" name="total" value="{{$item->harga * $item->qty}}">
+                                    <h6 class="text-red font-weight-bold mt-4">Rp. {{$item->harga * $item->qty}}</h6>
+                                    <!-- STOK -->
+                                    <p class="content mt-4">quantity : {{$item->qty}}</p>
+                                </div>
+                                <div class="ml-0 ml-md-auto mr-0  mr-md-4 mx-auto">
 
-                                <div class="d-flex cart-form  w-100">
-                                    <img src="assets/img/trash-bin.png" class="cursor-pointer " alt="">
+                                    {{-- <div class="d-flex cart-form  w-100">
+                                        <img src="assets/img/trash-bin.png" class="cursor-pointer " alt="">
 
-                                    <div class="d-flex">
-                                        <div class="btn cursor-pointer   btn-minus  num-icon pr-0 pt-2 ">
-                                            <i class="fa fa-minus num-fa "></i>
+                                        <div class="d-flex">
+                                            <div class="btn cursor-pointer   btn-minus  num-icon pr-0 pt-2 ">
+                                                <i class="fa fa-minus num-fa "></i>
+                                            </div>
+                                            <input id="qty" value="1" class="form-control quantity rounded num-form" min="1"
+                                                name="quantity" placeholder="0" type="number">
+                                            <div class="btn cursor-pointer  btn-plus pl-0 pt-2 num-icon">
+                                                <i class="fa fa-plus num-fa"></i>
+                                            </div>
                                         </div>
-                                        <input id="qty" value="1" class="form-control quantity rounded num-form" min="1"
-                                            name="quantity" placeholder="0" type="number">
-                                        <div class="btn cursor-pointer  btn-plus pl-0 pt-2 num-icon">
-                                            <i class="fa fa-plus num-fa"></i>
-                                        </div>
-                                    </div>
 
+                                    </div> --}}
                                 </div>
                             </div>
-                        </div>
-                        <div class="wishlist-item d-flex position-relative pl-0 pl-md-5 flex-column flex-md-row py-4">
+                            
+                        @endforeach
+                        {{-- <div class="wishlist-item d-flex position-relative pl-0 pl-md-5 flex-column flex-md-row py-4">
                             <input type="checkbox" checked class="rounded cart-check">
                             <!-- GAMBAR -->
                             <img src="assets/img/product2.png" class="wishlist-img d-block mx-auto mx-md-0" alt="">
@@ -175,10 +179,11 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
+                {{-- <p>{{$totalfix}}</p> --}}
                 <div class="col-md-4 p-4">
                     <div class="bg-white shadow-sm rounded-small  sticky-top ">
                         <form class="form-inline">
@@ -200,7 +205,7 @@
                                 <small class="font-weight-bold ">Total Harga (3 barang)</small>
                                 <small class="font-weight-bold">Rp1.500.000</small>
                             </div>
-                            <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli (3) </a></button>
+                            <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button>
                             </div>
                         </div>
                     </div>

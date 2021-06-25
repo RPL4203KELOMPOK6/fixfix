@@ -10,8 +10,8 @@
     </a>
     <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
         <div class="d-flex shadow-sm align-item-center rounded-small p-2">
-            <img src="assets/img/account.png" class="photo-profile rounded-circle" alt=""> <span
-                class="text-gray ml-3 font-weight-bold"><a href="/profile"></a></span>
+            <img src="{{asset('assets/img/account.png')}}" class="photo-profile rounded-circle" alt=""> <span
+                class="text-gray ml-3 font-weight-bold"><a href="/profile">{{ Auth::user()->name }}</a></span>
         </div>
         <a href="#">
             <div class="shadow-sm mt-2 rounded-small p-2">
@@ -54,33 +54,33 @@
                 </div>
             </div>
             <div class="col-md-6 mt-3 mt-md-0">
-                <h5 class="font-weight-bold">{{$data->nama}}<h5>
-                        <div>
-                            <i class="far fa-star star-icon"></i>
-                            <i class="far fa-star star-icon"></i>
-                            <i class="far fa-star star-icon"></i>
-                            <i class="far fa-star star-icon"></i>
-                            <i class="far fa-star star-icon"></i>
-                            <small class="text-secondary">( 3 costumer review )</small>
-                        </div>
-                        <h5 class="font-weight-bold text-red">Rp. {{$data -> harga}} <h5>
-                                <div class="content w-responsive-75 mb-3 border-content pt-4 mt-3">
-                                    <p>{{$data->penyanyi}}</p>
+                <h5 class="font-weight-bold">{{$data->nama}}</h5>
+                <div>
+                    <i class="far fa-star star-icon"></i>
+                    <i class="far fa-star star-icon"></i>
+                    <i class="far fa-star star-icon"></i>
+                    <i class="far fa-star star-icon"></i>
+                    <i class="far fa-star star-icon"></i>
+                    <small class="text-secondary">( 3 costumer review )</small>
+                </div>
+                <h5 class="font-weight-bold text-red">Rp. {{$data -> harga}} </h5>
+                <div class="content w-responsive-75 mb-3 border-content pt-4 mt-3">
+                    <p>{{$data->penyanyi}}</p>
 
-                                </div>
-                                <div class="mt-3 border-content pt-4  w-responsive-75">
-                                    <form action="" class="d-flex">
-                                        <input value="1" type="number" class="qty-form text-center">
-                                        <button class="btn primary-bg text-white ml-3 font-weight-bold"><a
-                                                href="/cart"></a>Tambah Ke Keranjang</button>
-                                    </form>
-                                </div>
-                                <h5 class="text-red font-weight-bold cursor-pointer"><i
-                                        class="fas fa-heart mr-3"></i>Add to Wishlist</h5>
-                                <div class="content border-content w-responsive-75 pt-4 mt-4">
+                </div>
+                <div class="mt-3 border-content pt-4  w-responsive-75">
+                    <form role="form" action="/detail/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                        <input min="0" name="qty" value="1" type="number" class="qty-form text-center">
+                        <button type="submit" id="btnresult" class="btn primary-bg text-white ml-3 font-weight-bold">Tambah Ke Keranjang</button>
+                    </form>
+                </div>
+                <h5 class="text-red font-weight-bold cursor-pointer"><i
+                        class="fas fa-heart mr-3"></i>Add to Wishlist</h5>
+                <div class="content border-content w-responsive-75 pt-4 mt-4">
 
-                                    <p>{{$data->deskripsi}}</p>
-                                </div>
+                    <p>{{$data->deskripsi}}</p>
+                </div>
             </div>
 
         </div>

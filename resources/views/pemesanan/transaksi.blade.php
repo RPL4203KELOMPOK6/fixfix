@@ -39,14 +39,15 @@
                 <p class="font-weight-bold"><i class="fas fa-map-marker-alt"></i> Alamat Pengiriman</p>
                 <div class="row mt-3">
                     <div class="col-md-4">
-                        <p class="font-weight-bold w-50">Jhon Doe (+62)82113261721</p>
+                        <p class="font-weight-bold w-50">{{ Auth::user()->name }}</p>
+                        <p class="font-weight-bold w-50">Phone :{{ Auth::user()->phone }}</p>
                     </div>
                     <div class="col-md-8 mt-3 mt-md-0">
-                        <p class="font-weight-bold text-secondary">Jl. Telekomunikasi No. 1, Terusan Buahbatu - Bojongsoang, Sukapura, Kec. Dayeuhkolot, Bandung, Jawa Barat 4025</p>
+                        <p class="font-weight-bold text-secondary">{{ Auth::user()->alamat }}</p>
                     </div>
                 </div>
-                <button class="btn primary-bg text-white  mt-5 font-weight-bold"> Ubah
-                  Alamat</button>
+                {{-- <button class="btn primary-bg text-white  mt-5 font-weight-bold"> Ubah
+                  Alamat</button> --}}
             </div>
             <div class="bg-white p-3 mt-4 shadow table-responsive">
               <h5 class="font-weight-bold">Produk Pesanan</h5>
@@ -61,17 +62,20 @@
                 </thead>
                 <tbody>
                   <!-- ITEM PRODUK -->
+                  @foreach ($data as $item)
+                      
                   <tr  class="detail-produk">
                     <td class="d-flex align-item-center">
                       <img src="assets/img/detail2.png" class="produk-pesan-icon" alt="">
-                      <p class="ml-3"><span class="font-weight-bold">EXO</span> Vol.3 EX'ACT Album</p>
+                      <p class="ml-3"><span class="font-weight-bold">{{$item->penyanyi}}</span> {{$item->nama}}</p>
                     </td>
-                    <td class="font-weight-bold">Rp.130.000</td>
-                    <td class="font-weight-bold">1</td>
-                    <td class="font-weight-bold">Rp.130.000</td>
+                    <td class="font-weight-bold">Rp. {{$item->harga}}</td>
+                    <td class="font-weight-bold">{{$item->qty}}</td>
+                    <td class="font-weight-bold">Rp. {{$item->harga * $item->qty}}</td>
                   </tr>
+                  @endforeach
                   <!-- ITEM PRODUK -->
-                  <tr  class="detail-produk">
+                  {{-- <tr  class="detail-produk">
                     <td class="d-flex align-item-center">
                       <img src="assets/img/product2.png" class="produk-pesan-icon" alt="">
                       <p class="ml-3"><span class="font-weight-bold">Rihanna</span> Anti Album</p>
@@ -93,7 +97,7 @@
                     </td>
                     <td class="font-weight-bold"></td>
                     <td class="font-weight-bold detail-produk">Rp.20.000</td>
-                  </tr>
+                  </tr> --}}
                   <!-- Total Harga -->
                   <tr >
                     <td></td>

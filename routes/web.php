@@ -33,27 +33,27 @@ Route::middleware('role:admin')->delete('/admin/dataalbum/{id}', 'AlbumControlle
 Route::get('/profile', 'HomeController@profile');
 Route::post('/profile', 'HomeController@update');
 Route::get('/detail/{id}', 'AlbumController@detail');
+Route::post('/detail/{id}', 'AlbumController@addcart');
 // Route::post('/detail/{id}', 'AlbumController@cart');
 // Route::get('/profile', function () {
 //     return view('pemesanan.profile');
 // });
 
-Route::get('/cart', function () {
-    return view('pemesanan.cart');
-});
 
 
+Route::get('/cart', 'AlbumController@cart');
+Route::get('/transaksi', 'AlbumController@transaksi');
 Route::get('/pesanan', function () {
     return view('pemesanan.pesanan');
 });
 
-Route::get('/transaksi', function () {
-    return view('pemesanan.transaksi');
-});
+// Route::get('/transaksi', function () {
+//     return view('pemesanan.transaksi');
+// });
 
-Route::get('/address', function () {
-    return view('pemesanan.address');
-});
+// Route::get('/cart', function () {
+//     return view('pemesanan.cart');
+// });
 
 Route::middleware('role:admin')->get('/admin/listuser', 'AdminController@show')->name('listuser');
 
