@@ -46,7 +46,7 @@
       <div class="w-responsive-50 p-3 d-block mx-auto">
         <div class="d-flex border-bottom pb-3 justify-content-between">
           <h6>Total Pembayaran</h6>
-          <h6 class="text-danger">Rp.131.000</h6>
+          <h6 class="text-danger">Rp.920.000</h6>
         </div>
         <div class="d-flex  mt-3">
           <div class="mr-3">

@@ -1,4 +1,4 @@
-@extends('layouts/main');
+@extends('layouts/main')
 
 @section('title','Alboem | Transaksi')
 
@@ -66,7 +66,7 @@
                       
                   <tr  class="detail-produk">
                     <td class="d-flex align-item-center">
-                      <img src="assets/img/detail2.png" class="produk-pesan-icon" alt="">
+                      <img src="/image/{{$item->gambar}}" class="produk-pesan-icon" alt="">
                       <p class="ml-3"><span class="font-weight-bold">{{$item->penyanyi}}</span> {{$item->nama}}</p>
                     </td>
                     <td class="font-weight-bold">Rp. {{$item->harga}}</td>
@@ -103,7 +103,7 @@
                     <td></td>
                     <td ></td>
                     <td ></td>
-                    <td class="font-weight-bold detail-produk text-red">Rp.300.000</td>
+                    <td class="font-weight-bold detail-produk text-red">Rp.900.000</td>
                   </tr>
                 </tbody>
               </table>
@@ -126,7 +126,7 @@
               <div style="width: 300px;" class="d-flex  mx-auto mx-md-0 ml-md-auto  flex-column">
                 <div class="d-flex mt-3">
                   <p class="mr-auto font-weight-bold">Subtotal Produk</p>
-                  <p >Rp280.000</p>
+                  <p >Rp900.000</p>
                 </div>
                 <div class="d-flex mt-2">
                   <p class="mr-auto font-weight-bold">Total Ongkos Kirim</p>
@@ -134,7 +134,7 @@
                 </div>
                   <div class="d-flex mt-2">
                   <p class="mr-auto font-weight-bold">Total Pembayaran:</p>
-                  <p class="text-red">Rp300.000</p>
+                  <p class="text-red">Rp920.000</p>
                 </div>
               </div>
               <div class="border-top  mt-4">
