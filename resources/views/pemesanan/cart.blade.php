@@ -205,7 +205,8 @@
                                 <small class="font-weight-bold ">Total Harga (3 barang)</small>
                                 <small class="font-weight-bold">Rp1.500.000</small>
                             </div>
-                            <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button>
+                            {{-- <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button> --}}
+                            <a href="/transaksi" class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100">Beli</a>
                             </div>
                         </div>
                     </div>

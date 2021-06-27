@@ -138,7 +138,8 @@
                 </div>
               </div>
               <div class="border-top  mt-4">
-                <button class="btn red-bg text-white  d-block ml-0 ml-md-auto  mr-4 mx-auto mx-md-0 font-weight-bold mt-4 px-5"><a href="/pesanan">Buat Pesanan</a></button>
+                <a href="/pesanan" class="btn red-bg text-white  d-block ml-0 ml-md-auto  mr-4 mx-auto mx-md-0 font-weight-bold mt-4 px-5">Buat Pesanan</a>
+                {{-- <button class="btn red-bg text-white  d-block ml-0 ml-md-auto  mr-4 mx-auto mx-md-0 font-weight-bold mt-4 px-5"><a href="/pesanan">Buat Pesanan</a></button> --}}
               </div>
           </div>
         </div>
