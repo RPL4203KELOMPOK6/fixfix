@@ -98,13 +98,13 @@
           
       <div class="row mt-5">
         @foreach ($album as $album)
-        @if ($album->number<=13)
+        
         <div class="col-md-4" >
-          <img src="{{asset('../image/'. $album->gambar)}}" class="w-100" alt="" onclick="event.preventDefault(); document.getElementById('mentahan/detail_produk').submit();">
-          <h5 class="font-weight-bold mt-4  ml-4" ><a href="/detail_produk">{{ $album->nama }}</a></h5>
-          <p class="text-secondary  ml-4">{{$album->penyanyi}}</p>
+          <img src="/image/{{ $album -> gambar }}" class="w-100" style="width: 50px" alt="">
+            <a href="/detail/{{$album->id}}" class="font-weight-bold mt-4 ml-4">{{$album -> nama}}</h5>
+            <p class="text-secondary  ml-4">{{$album -> penyanyi}}</p>
         </div> 
-        @endif
+        
         @endforeach
         {{-- @forelse($album->chunk(4) as $album)
             @foreach($album as $album)

@@ -54,10 +54,10 @@
                             <div class="wishlist-item top mt-3 d-flex position-relative pl-0 pl-md-5 flex-column flex-md-row py-4">
                                 <input type="checkbox" checked class="rounded cart-check">
                                 <!-- GAMBAR -->
-                                <img src="{{$item->gambar}}" class="wishlist-img d-block mx-auto mx-md-0" alt="">
+                                <img src="/image/{{$item->gambar}}" class="wishlist-img d-block mx-auto mx-md-0" alt="">
                                 <div class="ml-0 ml-md-3 text-center text-md-left mt-3 mt-md-0">
                                     <!-- JUDUL PRODUK -->
-                                    <p class="content"><span class="font-weight-bold">{{$item->penyanyi}}</span>{{$item->nama}}</p>
+                                    <p class="content"><span class="font-weight-bold">{{$item->penyanyi}}</span> {{$item->nama}}</p>
                                     <!-- HARGA  -->
                                     <input type="hidden" name="total" value="{{$item->harga * $item->qty}}">
                                     <h6 class="text-red font-weight-bold mt-4">Rp. {{$item->harga * $item->qty}}</h6>
