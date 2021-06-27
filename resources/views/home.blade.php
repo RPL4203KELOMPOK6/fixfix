@@ -97,6 +97,7 @@
           </div>
           
       <div class="row mt-5">
+
         @foreach ($album as $data)
         <div class="col-md-4">
             <img src="/image/{{ $data -> gambar }}" class="w-100" style="width: 50px" alt="">
@@ -104,6 +105,7 @@
             <p class="text-secondary  ml-4">{{$data -> penyanyi}}</p>
             <p>{{$data -> deskripsi}}</p>
         </div>
+
         @endforeach
         {{-- @forelse($album->chunk(4) as $album)
             @foreach($album as $album)

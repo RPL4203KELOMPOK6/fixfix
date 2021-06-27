@@ -59,6 +59,7 @@
                                     <!-- JUDUL PRODUK -->
                                     <p class="content"><span class="font-weight-bold">{{$item->penyanyi}}</span></p>
                                     <p>{{$item->nama}}</p>
+
                                     <!-- HARGA  -->
                                     <input type="hidden" name="total" value="{{$item->harga * $item->qty}}">
                                     <h6 class="text-red font-weight-bold mt-4">Rp. {{$item->harga * $item->qty}}</h6>
@@ -206,7 +207,8 @@
                                 <small class="font-weight-bold ">Total Harga (3 barang)</small>
                                 <small class="font-weight-bold">Rp1.500.000</small>
                             </div>
-                            <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button>
+                            {{-- <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button> --}}
+                            <a href="/transaksi" class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100">Beli</a>
                             </div>
                         </div>
                     </div>
