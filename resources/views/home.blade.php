@@ -2,7 +2,7 @@
 
 @section('title','Alboem | Home')
 
-@section('login')
+{{-- @section('login')
     <li class="nav-item dropdown mx-md-3 mx-0">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
@@ -35,7 +35,7 @@
         </form>
         </div>
     </li>
-@endsection
+@endsection --}}
 
 @section('container')
   <section>
@@ -97,14 +97,15 @@
           </div>
           
       <div class="row mt-5">
-        @foreach ($album as $album)
-        
-        <div class="col-md-4" >
-          <img src="/image/{{ $album -> gambar }}" class="w-100" style="width: 50px" alt="">
-            <a href="/detail/{{$album->id}}" class="font-weight-bold mt-4 ml-4">{{$album -> nama}}</h5>
-            <p class="text-secondary  ml-4">{{$album -> penyanyi}}</p>
-        </div> 
-        
+
+        @foreach ($album as $data)
+        <div class="col-md-4">
+            <img src="/image/{{ $data -> gambar }}" class="w-100" style="width: 50px" alt="">
+            <a href="/detail/{{$data->id}}" class="font-weight-bold mt-4 ml-4">{{$data -> nama}}</h5>
+            <p class="text-secondary  ml-4">{{$data -> penyanyi}}</p>
+            <p>{{$data -> deskripsi}}</p>
+        </div>
+
         @endforeach
         {{-- @forelse($album->chunk(4) as $album)
             @foreach($album as $album)

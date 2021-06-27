@@ -2,43 +2,7 @@
 
 @section('title','Alboem | Detail Produk')
 
-@section('login')
-<li class="nav-item dropdown mx-md-3 mx-0">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <img src="{{asset('assets/img/account.png')}}" alt="">
-    </a>
-    <div class="dropdown-menu p-4" aria-labelledby="navbarDropdown">
-        <div class="d-flex shadow-sm align-item-center rounded-small p-2">
-            <img src="{{asset('assets/img/account.png')}}" class="photo-profile rounded-circle" alt=""> <span
-                class="text-gray ml-3 font-weight-bold"><a href="/profile">{{ Auth::user()->name }}</a></span>
-        </div>
-        <a href="#">
-            <div class="shadow-sm mt-2 rounded-small p-2">
-                <p class="text-gray font-weight-bold">Your Favorite Shop</p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="shadow-sm mt-2 rounded-small p-2">
-                <p class="text-gray font-weight-bold">Your Transaction</p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="shadow-sm mt-2 rounded-small p-2">
-                <p class="text-gray font-weight-bold">Setting</p>
-            </div>
-        </a>
-        <a class="dropdown-item" href="{{ route('logout') }}"
-            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <p class="text-gray font-weight-bold text-right mt-4 cursor-pointer">{{ __('Logout') }}<i
-                    class="ml-1 fa fa-sign-out-alt"></i></p>
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-    </div>
-</li>
-@endsection
+
 
 @section('container')
 <section>

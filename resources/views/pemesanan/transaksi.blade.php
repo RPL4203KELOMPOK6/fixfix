@@ -74,31 +74,6 @@
                     <td class="font-weight-bold">Rp. {{$item->harga * $item->qty}}</td>
                   </tr>
                   @endforeach
-                  <!-- ITEM PRODUK -->
-                  {{-- <tr  class="detail-produk">
-                    <td class="d-flex align-item-center">
-                      <img src="assets/img/product2.png" class="produk-pesan-icon" alt="">
-                      <p class="ml-3"><span class="font-weight-bold">Rihanna</span> Anti Album</p>
-                    </td>
-                    <td class="font-weight-bold">Rp.150.000</td>
-                    <td class="font-weight-bold">1</td>
-                    <td class="font-weight-bold">Rp.150.000</td>
-                  </tr>
-                  <!-- SELECT OPSI PENGIRIMAN -->
-                  <tr class="border-bottom border-dark">
-                    <td class="primary-color font-weight-bold">
-                     Opsi Pengiriman:
-                    </td>
-                    <td class="font-weight-bold">
-                      <select class="p-0 w-responsive-50 font-weight-bold text-black form-control-sm border-0">
-                        <option>Reguler</option>
-                        <option>Express</option>
-                      </select>
-                    </td>
-                    <td class="font-weight-bold"></td>
-                    <td class="font-weight-bold detail-produk">Rp.20.000</td>
-                  </tr> --}}
-                  <!-- Total Harga -->
                   <tr >
                     <td></td>
                     <td ></td>
