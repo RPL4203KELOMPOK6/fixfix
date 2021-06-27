@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Album;
 use App\Cart;
-use App\User;
+use session;
 use Illuminate\Support\Facades\DB;
 
 class AlbumController extends Controller
@@ -101,12 +101,14 @@ class AlbumController extends Controller
 
     public function detail($id)
     {
+        
         $data = Album::find($id);
         return view('pemesanan.detail', compact('data'));
     }
 
     public function addcart(Request $req, $id)
     {
+        
             $data = Album::find($id);
             $cart = new Cart;
             $cart->user_id = Auth::user()->getAuthIdentifier();

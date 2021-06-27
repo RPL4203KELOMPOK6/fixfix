@@ -2,7 +2,7 @@
 
 @section('title','Alboem | Alamat')
 
-@section('login')
+{{-- @section('login')
   <li class="nav-item dropdown mx-md-3 mx-0">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
@@ -30,7 +30,7 @@
       <p class="text-gray font-weight-bold text-right mt-4 cursor-pointer">Logout <i class="ml-1 fa fa-sign-out-alt"></i></p>
     </div>
   </li>
-@endsection
+@endsection --}}
 
 @section('container')
 <section>
