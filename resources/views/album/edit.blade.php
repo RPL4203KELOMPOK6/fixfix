@@ -31,6 +31,16 @@
                 @enderror --}}
                 </div>
                 <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Harga</div>
+                        <input type="text" id="harga" name="harga" class="form-control" value="{{$album->harga}}">
+                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
+                    </div>
+                {{-- @error('harga')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror --}}
+                </div>
+                <div class="form-group">
                     <img src="/image/{{ $album -> gambar }}" alt="">
                 </div>
                 <div class="row form-group">
