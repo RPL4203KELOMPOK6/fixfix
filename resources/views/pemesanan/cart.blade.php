@@ -200,12 +200,12 @@
                             <div class="p-3">
                             <h5 class="font-weight-bold dark-color">Ringkasan Belanja</h5>
                             <div class="d-flex justify-content-between">
-                                <small class="font-weight-bold text-secondary">Total Harga (3 barang)</small>
-                                <small class="font-weight-bold text-secondary mb-2">Rp1.500.000</small>
+                                <small class="font-weight-bold text-secondary">Total Harga ({{$item->qty}} barang)</small>
+                                <small class="font-weight-bold text-secondary mb-2">Rp. {{$item->harga * $item->qty}}</small>
                             </div>
                             <div class="d-flex justify-content-between border-top py-2">
-                                <small class="font-weight-bold ">Total Harga (3 barang)</small>
-                                <small class="font-weight-bold">Rp1.500.000</small>
+                                <small class="font-weight-bold ">Total Harga ({{$item->qty}} barang)</small>
+                                <small class="font-weight-bold">Rp. {{$item->harga * $item->qty}}</small>
                             </div>
                             {{-- <button class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100"><a href="/transaksi"> Beli </a></button> --}}
                             <a href="/transaksi" class="btn add-address-bg mt-3 text-white font-weight-bold d-block w-100">Beli</a>
