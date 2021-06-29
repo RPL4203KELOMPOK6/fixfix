@@ -52,26 +52,16 @@
       <div class="primary-bg  border-header mt-3"></div>
       <div class="row mt-5">
         @foreach ($album as $data)
-        <div class="col-md-4">
-            <img src="/image/{{ $data -> gambar }}" class="w-100" style="width: 50px" alt="">
-            <a href="/detail/{{$data->id}}" class="font-weight-bold mt-4 ml-4">{{$data -> nama}}</h5>
-            <p class="text-secondary  ml-4">{{$data -> penyanyi}}</p>
-
+        <div class="col-md-3 pt-5 mt-5">
+            <img src="/image/{{ $data -> gambar }}" class="w-100 h-100" alt="">
+            <a href="/detail/{{$data->id}}" class="font-weight-bold mb-5">{{$data -> nama}}</h5>
+            <p class="text-secondary">{{$data -> penyanyi}}</p>
         </div>
         @endforeach
       </div>
-      {{-- <div class="col-md-4">
-        <img src="assets/img/examine2.png" class="w-100" alt="">
-        <h5 class="font-weight-bold mt-4  ml-4">Lovesick Girls</h5>
-        <p class="text-secondary  ml-4">Blackpink</p>
-      </div>
-      <div class="col-md-4">
-        <img src="assets/img/examine3.png" class="w-100" alt="">
-        <h5 class="font-weight-bold mt-4  ml-4">Lorem</h5>
-        <p class="text-secondary  ml-4">EXO</p>
-      </div> --}}
     </div>
   </section>
+
   <section class="pt-5">
     <div class="container bg-white rounded-lg shadow-lg py-3">
       <h2 class="text-center header-color font-weight-bold mt-3">Kenapa Alboem</h2>
@@ -175,7 +165,7 @@
             <small class="text-secondary">Seoul, Indonesia</small>
           </div>
             <div class="ml-auto">
-            <!-- BINTANG -->
+            <!-- BINTANG -->gc_collect_cycles
               <span class=" mr-2">4.5</span>
               <i class="fas  fa-star review-icon"></i>
             </div>

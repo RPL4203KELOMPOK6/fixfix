@@ -78,52 +78,15 @@
       <h3 class="font-weight-bold pt-5">Rekomendasi Produk</h3>
       <p>Spesial untuk anda</p>
       <div class="primary-bg  border-header mt-3"></div>
-          <div class="row mt-medium">
-            
-                {{-- <div class="col-md-6">
-                    <img src="{{asset('../image/'. $album->gambar)}}" class="w-100" alt="">
-                    <h4 class="font-weight-bold mt-4">{{ $album->nama }}</h4>
-                    <p class="text-secondary">{{$album->penyanyi}}</p>
-                    
-                </div> --}}
-              
-            {{-- @break($album->number == 2 ) --}}
-            
-            {{-- <div class="col-md-6 mt-4 mt-md-0">
-              <img src="assets/img/Image-1.png" class="w-100" alt="">
-              <h4 class="font-weight-bold mt-4">Billie ellish</h4>
-              <p class="text-secondary">Lorem ipsum de amet</p>
-            </div> --}}
-          </div>
-          
       <div class="row mt-5">
-
         @foreach ($album as $data)
-        <div class="col-md-4">
-            <img src="/image/{{ $data -> gambar }}" class="w-100" style="width: 50px" alt="">
-            <a href="/detail/{{$data->id}}" class="font-weight-bold mt-4 ml-4">{{$data -> nama}}</h5>
-            <p class="text-secondary  ml-4">{{$data -> penyanyi}}</p>
-            <p>{{$data -> deskripsi}}</p>
+        <div class="col-md-3 pt-5 mt-5">
+            <img src="/image/{{ $data -> gambar }}" class="w-100 h-100" alt="">
+            <a href="/detail/{{$data->id}}" class="font-weight-bold mb-5">{{$data -> nama}}</h5>
+            <p class="text-secondary">{{$data -> penyanyi}}</p>
         </div>
-
         @endforeach
-        {{-- @forelse($album->chunk(4) as $album)
-            @foreach($album as $album)
-            <div class="col-md-4">
-
-                <product :album="{{$album}}"
-                         albumlink="{{route('album',$album->id)}}"
-                         albumimagepath='{{asset("image/$album->gambar")}}'
-                >
-                </product>
-
-            </div>
-            @endforeach 
-        @empty
-            <h3>No Album</h3>
-        @endforelse --}}
       </div>
-      
     </div>
   </section>
   <section class="pt-5">
