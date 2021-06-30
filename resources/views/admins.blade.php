@@ -15,7 +15,7 @@
                         <table class="table ">
                             <thead>
                                 <tr>
-                                    <th class="serial">#</th>
+                                    <th class="serial">No.</th>
                                     <th class="avatar">Nama Album</th>
                                     <th>Penyanyi</th>
                                     <th>Harga</th>
@@ -37,6 +37,35 @@
                             </tbody>
                         </table>
                     </div> <!-- /.table-stats -->
+                </div>
+                <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">List User</strong>
+                    </div>
+                    <div class="table-stats order-table ov-h">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th class="serial">No.</th>
+                                    <th class="avatar">Username</th>
+                                    <th style="text-align: left">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($users as $user)
+                                @if ($user->id != 1)
+                                    <tr>
+                                        <td> {{ $user -> id}} </td>
+                                        <td> {{ $user -> name }} </td>
+                                        <td style="text-align: left"> {{ $user -> email }} </td>
+                                    </tr>
+                                @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div> <!-- /.table-stats -->
+                </div>
                 </div>
             </div>
         </div>
